@@ -5,73 +5,62 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="Description" content="Films en streaming.">
-        <style>
-            .visually-hidden {
-                position: absolute;
-                left: -9999px;
-                width: 1px;
-                height: 1px;
-                overflow: hidden;
-            }
-            .skip-link {
-                position: absolute;
-                top: -40px;
-                left: 6px;
-                background: #000;
-                color: #fff;
-                padding: 8px;
-                text-decoration: none;
-                z-index: 1000;
-            }
-            .skip-link:focus {
-                top: 6px;
-            }
-        </style>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="images/logo.jpeg" type="image/jpeg">
     </head>
     <body>
-        <a class="skip-link" href="#main-content">
+        <a class="skip-link" href="#trends-title">
             Aller directement au contenu principal
         </a>
+
         <header>
             <a href="index.html">
-                <img src="images/logo.png" alt="Streamflix • Films en streaming" style="width: 50px;">
+                <img src="images/logo.jpeg" alt="Streamflix • Films en streaming" class="header-logo">
             </a>
 
-            <nav aria-label="Navigation principale du site">
-                <ul>
+            <nav class="header-nav" aria-label="Navigation principale du site">
+                <ul id="header-menu">
                     <li><a href="index.html" aria-current="page">Accueil</a></li>
                     <li><a href="">Films</a></li>
                     <li><a href="">Séries</a></li>
                     <li><a href="">Ma liste</a></li>
+                    <li><a href="" class="header-account-mobile">🧔 Compte</a></li>
                 </ul>
             </nav>
-            <div>
-                <form role="search" aria-label="Recherche de produits">
-                    <label for="search-input" class="visually-hidden">
+            <div class="header-container">
+                <form class="header-search" role="search" aria-label="Recherche de produits">
+                    <label for="header-search-input" class="visually-hidden">
                         Rechercher un film ou une série
                     </label>
-                    <input type="search" id="search-input" name="search" placeholder="Recherche..." aria-describedby="search-help">
-                    <div id="search-help" class="visually-hidden">
+                    <input type="search" id="header-search-input" name="search" placeholder="Recherche..." aria-describedby="headerSearchHelp">
+                    <div id="headerSearchHelp" class="visually-hidden">
                         Saisissez le nom du film ou de la série recherché puis appuyez sur Entrée
                     </div>
                     <button type="submit" aria-label="Lancer la recherche">
                         <span aria-hidden="true">🔍</span>
                     </button>
                 </form>
-                <button class="headerAccount">
+                <a href="" class="header-account">
                     🧔 Compte
+                </a>
+
+                <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="header-menu">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
                 </button>
             </div>
         </header>
-        <main id="main-content">
+
+        <main class="main-content" id="main-content">
             <section class="hero" aria-labelledby="hero-title">
                 <div class="hero-content">
                     <h1 id="hero-title">Inception</h1>
-                    <p class="hero-description">
+                    <p id="hero-description">
                         Un voleur qui s'infiltre dans les rêves des autres pour voler leurs secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de la voler.
                     </p>
                     <div class="hero-actions">
-                        <a href="#produits" class="btn-primary">
+                        <a href="" class="btn-primary">
                             Découvrir
                         </a>
                         <button type="button" class="btn-secondary">
@@ -82,16 +71,14 @@
                         </a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="images/films/inception.webp" alt="">
-                </div>
             </section>
-            <section aria-labelledby="trends-title">
+
+            <section class="trends" aria-labelledby="trends-title">
                 <h2 id="trends-title">Tendances actuelles</h2>
-                <ul class="trends-grid">
-                    <li class="movie-card">
+                <div class="trends-grid">
+                    <article class="movie-card">
                         <div class="movie-image">
-                            <img src="images/films/darknight.webp" alt="The Dark Knight (2008)">
+                            <img src="images/films/darknight.webp" alt="Affiche du film The Dark Knight (2008)">
                         </div>
                         <div class="movie-info">
                             <h3>The Dark Knight (2008)</h3>
@@ -106,14 +93,14 @@
                                 <span aria-hidden="true">2h32</span>
                                 <span class="visually-hidden">Durée : 2 heures 32 minutes</span>
                             </p>
-                            <button aria-label="Regarder The Dark Knight (2008)">
+                            <button class="btn-primary" aria-label="Regarder The Dark Knight (2008)">
                                 Regarder
                             </button>
                         </div>
-                    </li>
-                    <li class="movie-card">
+                    </article>
+                    <article class="movie-card">
                         <div class="movie-image">
-                            <img src="images/films/inception.webp" alt="Interstellar (2014)">
+                            <img src="images/films/inception.webp" alt="Affiche du film Interstellar (2014)">
                         </div>
                         <div class="movie-info">
                             <h3>Interstellar (2014)</h3>
@@ -128,14 +115,14 @@
                                 <span aria-hidden="true">2h49</span>
                                 <span class="visually-hidden">Durée : 2 heures 49 minutes</span>
                             </p>
-                            <button aria-label="Regarder Interstellar (2014)">
+                            <button class="btn-primary" aria-label="Regarder Interstellar (2014)">
                                 Regarder
                             </button>
                         </div>
-                    </li>
-                    <li class="movie-card">
+                    </article>
+                    <article class="movie-card">
                         <div class="movie-image">
-                            <img src="images/films/pulp_fiction.jpg" alt="Pulp Fiction (1994)">
+                            <img src="images/films/pulp_fiction.jpg" alt="Affiche du film Pulp Fiction (1994)">
                         </div>
                         <div class="movie-info">
                             <h3>Pulp Fiction (1994)</h3>
@@ -150,19 +137,20 @@
                                 <span aria-hidden="true">2h34</span>
                                 <span class="visually-hidden">Durée : 2 heures 34 minutes</span>
                             </p>
-                            <button aria-label="Regarder Pulp Fiction (1994)">
+                            <button class="btn-primary" aria-label="Regarder Pulp Fiction (1994)">
                                 Regarder
                             </button>
                         </div>
-                    </li>
-                </ul>
+                    </article>
+                </div>
             </section>
-            <section aria-labelledby="recommended-title">
+
+            <section class="recommended" aria-labelledby="recommended-title">
                 <h2 id="recommended-title">Recommandés pour vous</h2>
-                <ul class="recommended-grid">
-                    <li class="movie-card">
+                <div class="recommended-grid">
+                    <article class="movie-card">
                         <div class="movie-image">
-                            <img src="images/films/inception.webp" alt="Inception (2010)">
+                            <img src="images/films/inception.webp" alt="Affiche du film Inception (2010)">
                         </div>
                         <div class="movie-info">
                             <h3>Inception (2010)</h3>
@@ -177,14 +165,14 @@
                                 <span aria-hidden="true">2h28</span>
                                 <span class="visually-hidden">Durée : 2 heures 28 minutes</span>
                             </p>
-                            <button aria-label="Regarder Inception (2010)">
+                            <button class="btn-primary" aria-label="Regarder Inception (2010)">
                                 Regarder
                             </button>
                         </div>
-                    </li>
-                    <li class="movie-card">
+                    </article>
+                    <article class="movie-card">
                         <div class="movie-image">
-                            <img src="images/films/matrix.jpeg" alt="The Matrix (1999)">
+                            <img src="images/films/matrix.jpeg" alt="Affiche du film The Matrix (1999)">
                         </div>
                         <div class="movie-info">
                             <h3>The Matrix (1999)</h3>
@@ -199,14 +187,14 @@
                                 <span aria-hidden="true">2h16</span>
                                 <span class="visually-hidden">Durée : 2 heures 16 minutes</span>
                             </p>
-                            <button aria-label="Regarder The Matrix (1999)">
+                            <button class="btn-primary" aria-label="Regarder The Matrix (1999)">
                                 Regarder
                             </button>
                         </div>
-                    </li>
-                    <li class="movie-card">
+                    </article>
+                    <article class="movie-card">
                         <div class="movie-image">
-                            <img src="images/films/forrest_gump.jpg" alt="Forrest Gump (1994)">
+                            <img src="images/films/forrest_gump.jpg" alt="Affiche du film Forrest Gump (1994)">
                         </div>
                         <div class="movie-info">
                             <h3>Forrest Gump (1994)</h3>
@@ -221,19 +209,20 @@
                                 <span aria-hidden="true">2h22</span>
                                 <span class="visually-hidden">Durée : 2 heures 22 minutes</span>
                             </p>
-                            <button aria-label="Regarder Forrest Gump (1994)">
+                            <button class="btn-primary" aria-label="Regarder Forrest Gump (1994)">
                                 Regarder
                             </button>
                         </div>
-                    </li>
-                </ul>
+                    </article>
+                </div>
             </section>
-            <section aria-labelledby="new-title">
+
+            <section class="new" aria-labelledby="new-title">
                 <h2 id="new-title">Nouveautés</h2>
-                <ul class="new-grid">
-                    <li class="movie-card">
+                <div class="new-grid">
+                    <article class="movie-card">
                         <div class="movie-image">
-                            <img src="images/films/Interstellar_film_poster.jpg" alt="Interstellar (2014)">
+                            <img src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar (2014)">
                         </div>
                         <div class="movie-info">
                             <h3>Interstellar (2014)</h3>
@@ -248,14 +237,14 @@
                                 <span aria-hidden="true">2h49</span>
                                 <span class="visually-hidden">Durée : 2 heures 49 minutes</span>
                             </p>
-                            <button aria-label="Regarder Interstellar (2014)">
+                            <button class="btn-primary" aria-label="Regarder Interstellar (2014)">
                                 Regarder
                             </button>
                         </div>
-                    </li>
-                    <li class="movie-card">
+                    </article>
+                    <article class="movie-card">
                         <div class="movie-image">
-                            <img src="images/films/darknight.webp" alt="The Dark Knight (2008)">
+                            <img src="images/films/darknight.webp" alt="Affiche du film The Dark Knight (2008)">
                         </div>
                         <div class="movie-info">
                             <h3>The Dark Knight (2008)</h3>
@@ -270,14 +259,14 @@
                                 <span aria-hidden="true">2h32</span>
                                 <span class="visually-hidden">Durée : 2 heures 32 minutes</span>
                             </p>
-                            <button aria-label="Regarder The Dark Knight (2008)">
+                            <button class="btn-primary" aria-label="Regarder The Dark Knight (2008)">
                                 Regarder
                             </button>
                         </div>
-                    </li>
-                    <li class="movie-card">
+                    </article>
+                    <article class="movie-card">
                         <div class="movie-image">
-                            <img src="images/films/inception.webp" alt="Inception (2010)">
+                            <img src="images/films/inception.webp" alt="Affiche du film Inception (2010)">
                         </div>
                         <div class="movie-info">
                             <h3>Inception (2010)</h3>
@@ -292,46 +281,52 @@
                                 <span aria-hidden="true">2h28</span>
                                 <span class="visually-hidden">Durée : 2 heures 28 minutes</span>
                             </p>
-                            <button aria-label="Regarder Inception (2010)">
+                            <button class="btn-primary" aria-label="Regarder Inception (2010)">
                                 Regarder
                             </button>
                         </div>
-                    </li>
-                </ul>
+                    </article>
+                </div>
             </section>
         </main>
 
         <footer>
             <div class="footer-content">
-                <nav aria-label="Navigation secondaire">
-                    <h2 class="visually-hidden">Liens utiles</h2>
-                    <ul>
-                        <li><a href="">Aide</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">Mentions légales</a></li>
-                        <li><a href="">Conditions d'utilisation</a></li>
-                    </ul>
-                </nav>
+                <a href="index.html" class="footer-logo">
+                    <img src="images/logo.jpeg" alt="Streamflix • Films en streaming">
+                </a>
                 <nav aria-label="Réseaux sociaux">
                     <h2 class="visually-hidden">Suivez-nous</h2>
                     <ul class="social-links">
-                        <li><a href="" aria-label="Suivez-nous sur Facebook">Facebook</a></li>
-                        <li><a href="" aria-label="Suivez-nous sur Twitter">Twitter</a></li>
-                        <li><a href="" aria-label="Suivez-nous sur Instagram">Instagram</a></li>
-                        <li><a href="" aria-label="Suivez-nous sur LinkedIn">LinkedIn</a></li>
+                        <li><a href=""><img src="images/reseaux-sociaux/facebook.svg" alt="Suivez-nous sur Facebook"></a></li>
+                        <li><a href=""><img src="images/reseaux-sociaux/instagram.svg" alt="Suivez-nous sur Instagram"></a></li>
+                        <li><a href=""><img src="images/reseaux-sociaux/tiktok.svg" alt="Suivez-nous sur TikTok"></a></li>
+                        <li><a href=""><img src="images/reseaux-sociaux/x.svg" alt="Suivez-nous sur X"></a></li>
                     </ul>
                 </nav>
-                <div class="contact-info">
-                    <h3>Nous contacter</h3>
-                    <address>
-                        <p><strong>Téléphone :</strong><a href="tel:+33123456789">01 23 45 67 89</a></p>
-                        <p><strong>Email :</strong><a href="mailto:contact@square.com">contact@square.com</a></p>
-                    </address>
+                <div class="legal-links">
+                    <nav aria-label="Liens utiles">
+                        <h2 class="visually-hidden">Liens utiles</h2>
+                        <ul>
+                            <li><a href="">Aide</a></li>
+                            <li><a href="">Contact</a></li>
+                            <li><a href="">Mentions légales</a></li>
+                            <li><a href="">Conditions d'utilisation</a></li>
+                        </ul>
+                    </nav>
+                    <p class="copyright">
+                        &copy; 2025 Streamflix
+                    </p>
                 </div>
-                <p class="copyright">
-                    <small>&copy; 2025 Square. Tous droits réservés.</small>
-                </p>
             </div>
         </footer>
+
+        <script>
+            document.querySelector('.hamburger').addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                document.querySelector('#header-menu').setAttribute('aria-expanded', !expanded);
+            });
+        </script>
     </body>
 </html>
