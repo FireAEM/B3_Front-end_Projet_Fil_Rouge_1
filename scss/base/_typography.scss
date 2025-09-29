@@ -1,0 +1,21 @@
+@import "../utils/variables";
+
+body {
+    font-family: $font-primary;
+    color: $text-light;
+    background-color: $background-color1;
+}
+
+h1 {
+    font-size: $font-size-large;
+}
+h2 {
+    font-size: $font-size-large;
+}
+h3 {
+    font-size: $font-size-base;
+}
+
+p {
+    font-size: $font-size-small;
+}

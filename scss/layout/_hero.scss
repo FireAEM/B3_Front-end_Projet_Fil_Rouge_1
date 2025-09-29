@@ -1,0 +1,27 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.hero {
+    box-sizing: border-box;
+    background-image: url("../../images/inception-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: $spacing-5;
+    border-radius: 0 0 $spacing-4 $spacing-4;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+
+    @include respond-max(md) {
+        gap: $spacing-3;
+    }
+}
+
+.text-shadow {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}

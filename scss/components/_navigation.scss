@@ -1,0 +1,85 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: $spacing-2;
+    background: $header-background;
+    color: $text-light;
+    padding: $spacing-1 $spacing-2;
+    text-decoration: none;
+    z-index: 5000;
+}
+.skip-link:focus {
+    top: $spacing-2;
+}
+
+
+
+.logo-stream {
+    width: $spacing-5;
+    transition: transform 0.25s;
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.navbar {
+    top: $spacing-1;
+    left: $spacing-1;
+    right: $spacing-1;
+    background-color: $header-background;
+    backdrop-filter: blur(20px) saturate(5);
+    -webkit-backdrop-filter: blur(20px) saturate(5);
+}
+
+.navbar-nav {
+    gap: $spacing-2;
+}
+
+.nav-link {
+    @include header-btn-variant(transparent, $text-light, $background-color2, $text-light);
+
+    &.active {
+        color: $primary-red;
+        font-weight: 600;
+    }
+}
+
+.navbar-search {
+    padding: $spacing-1;
+    background-color: $header-background;
+    box-shadow: $box-shadow1;
+    border: none;
+    border-radius: $spacing-5;
+    gap: $spacing-2;
+    transition: filter 0.25s;
+
+    &:hover {
+        filter: brightness(1.05);
+    }
+
+    input {
+        padding: $spacing-2;
+        border: none;
+        border-radius: $spacing-5;
+        color: $text-light;
+        background-color: transparent;
+
+        &::placeholder {
+            color: $text-light;
+        }
+    }
+
+    button {
+        @include btn-variant(transparent, $text-light);
+    }
+}
+
+
+// Bouton “Compte”
+.btn-stream {
+    @include header-btn-variant(transparent, $text-light, $background-color2, $text-light);
+}

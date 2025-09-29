@@ -1,0 +1,70 @@
+// Bouton variant (background + color + hover + active)
+@mixin btn-variant($background-color, $color) {
+    padding: $spacing-2 $spacing-3;
+    background-color: $background-color;
+    color: $color;
+    border: none;
+    border-radius: $spacing-5;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: $box-shadow1;
+    transition: 0.25s;
+
+    &:hover {
+        filter: brightness(1.25);
+        background-color: $background-color;
+        color: $color;
+    }
+
+    &:active {
+        transform: scale(0.95);
+        background-color: $background-color;
+        color: $color;
+    }
+}
+
+@mixin header-btn-variant($background-color, $color, $background-hover-color, $hover-color) {
+    padding: $spacing-1 $spacing-2;
+    background-color: $background-color;
+    color: $color;
+    text-align: center;
+    border: none;
+    border-radius: $spacing-5;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.25s;
+
+    &:hover {
+        background-color: $background-hover-color;
+        color: $hover-color;
+        box-shadow: $box-shadow1;
+    }
+
+    &:active {
+        transform: scale(0.95);
+        background-color: $background-hover-color;
+        color: $hover-color;
+    }
+}
+
+
+// Media query max standardisée
+@mixin respond-max($break) {
+    @if $break ==lg {
+        @media (max-width: 991.98px) {
+            @content;
+        }
+    }
+
+    @else if $break ==md {
+        @media (max-width: 767.98px) {
+            @content;
+        }
+    }
+
+    @else if $break ==sm {
+        @media (max-width: 575.98px) {
+            @content;
+        }
+    }
+}

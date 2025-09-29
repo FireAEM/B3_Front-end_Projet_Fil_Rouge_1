@@ -5,328 +5,401 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="Description" content="Films en streaming.">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" href="images/logo.jpeg" type="image/jpeg">
     </head>
+
     <body>
         <a class="skip-link" href="#trends-title">
             Aller directement au contenu principal
         </a>
 
         <header>
-            <a href="index.html">
-                <img src="images/logo.jpeg" alt="Streamflix • Films en streaming" class="header-logo">
-            </a>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75 fixed-top shadow-sm rounded-5 py-2 px-3"
+                aria-label="Navigation principale du site">
+                <div class="container-fluid d-flex align-items-center justify-content-between">
+                    <!-- Logo -->
+                    <a class="navbar-brand p-0 me-3" href="index.html">
+                        <img src="images/logo.jpeg" alt="Streamflix • Films en streaming" class="logo-stream">
+                    </a>
 
-            <nav class="header-nav" aria-label="Navigation principale du site">
-                <ul id="header-menu">
-                    <li><a href="index.html" aria-current="page">Accueil</a></li>
-                    <li><a href="">Films</a></li>
-                    <li><a href="">Séries</a></li>
-                    <li><a href="">Ma liste</a></li>
-                    <li><a href="" class="header-account-mobile">🧔 Compte</a></li>
-                </ul>
-            </nav>
-            <div class="header-container">
-                <form class="header-search" role="search" aria-label="Recherche de produits">
-                    <label for="header-search-input" class="visually-hidden">
-                        Rechercher un film ou une série
-                    </label>
-                    <input type="search" id="header-search-input" name="search" placeholder="Recherche..." aria-describedby="headerSearchHelp">
-                    <div id="headerSearchHelp" class="visually-hidden">
-                        Saisissez le nom du film ou de la série recherché puis appuyez sur Entrée
-                    </div>
-                    <button type="submit" aria-label="Lancer la recherche">
-                        <span aria-hidden="true">🔍</span>
+                    <!-- Bouton hamburger (collapse) -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarStreamflix" aria-controls="navbarStreamflix" aria-expanded="false"
+                        aria-label="Menu">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-                </form>
-                <a href="" class="header-account">
-                    🧔 Compte
-                </a>
 
-                <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="header-menu">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
-            </div>
+                    <!-- Contenu du menu -->
+                    <div class="collapse navbar-collapse" id="navbarStreamflix">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">
+                                    Accueil
+                                </a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#">Films</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Séries</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Ma liste</a></li>
+                        </ul>
+
+                        <!-- Formulaire de recherche -->
+                        <form class="navbar-search d-flex align-items-center justify-content-between me-lg-3 mb-2 mb-lg-0" role="search">
+                            <label for="navbar-search-input" class="visually-hidden">
+                                Rechercher un film ou une série
+                            </label>
+                            <input id="navbar-search-input" class="form-control" type="search" placeholder="Recherche..."
+                                aria-label="Recherche">
+                            <button class="btn" type="submit" aria-label="Lancer la recherche">
+                                🔍
+                            </button>
+                        </form>
+
+                        <!-- Lien “Compte” -->
+                        <a href="#" class="btn btn-stream btn-sm">
+                            🧔 Compte
+                        </a>
+                    </div>
+                </div>
+            </nav>
         </header>
 
-        <main class="main-content" id="main-content">
-            <section class="hero" aria-labelledby="hero-title">
-                <div class="hero-content">
-                    <h1 id="hero-title">Inception</h1>
-                    <p id="hero-description">
-                        Un voleur qui s'infiltre dans les rêves des autres pour voler leurs secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de la voler.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="" class="btn-primary">
-                            Découvrir
-                        </a>
-                        <button type="button" class="btn-secondary">
-                            Voir la vidéo de présentation
-                        </button>
-                        <a href="" class="btn-primary">
-                            Ajouter à ma liste
-                        </a>
+
+        <main id="main-content" class="d-flex flex-column align-items-center w-100 gap-5">
+            <section class="hero d-flex align-items-center w-100 vh-100 overflow-hidden text-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-8 col-lg-6 hero-content">
+                            <h1 class="display-1 fw-bold text-shadow" id="hero-title">Inception</h1>
+                            <p class="lead text-shadow mb-4" id="hero-description">
+                                Un voleur qui s'infiltre dans les rêves des autres pour voler leurs secrets découvre qu'il
+                                doit réaliser l'impossible : planter une idée plutôt que la voler.
+                            </p>
+                            <div class="d-grid gap-3 d-md-flex hero-actions">
+                                <a href="#" class="btn btn-primary btn-lg">Découvrir</a>
+                                <button type="button" class="btn btn-secondary btn-lg">Voir la vidéo</button>
+                                <a href="#" class="btn btn-primary btn-lg">Ajouter à ma liste</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="trends" aria-labelledby="trends-title">
-                <h2 id="trends-title">Tendances actuelles</h2>
-                <div class="trends-grid">
-                    <article class="movie-card">
-                        <div class="movie-image">
-                            <img src="images/films/darknight.webp" alt="Affiche du film The Dark Knight (2008)">
-                        </div>
-                        <div class="movie-info">
-                            <h3>The Dark Knight (2008)</h3>
-                            <p class="movie-category">
-                                <span class="visually-hidden">Catégories : </span>Action, Crime, Drama
-                            </p>
-                            <div class="movie-rating">
-                                <span aria-hidden="true">★★★★☆</span>
-                                <span class="visually-hidden">Note : 4,8 étoiles sur 5</span>
+
+            <section class="trends py-5" aria-labelledby="trends-title">
+                <div class="container">
+                    <h2 id="trends-title" class="mb-4">Tendances actuelles</h2>
+                    <div class="row g-4">
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card movie-card h-100 text-light">
+                                <div class="movie-image">
+                                    <img src="images/films/darknight.webp" class="card-img-top img-fluid"
+                                        alt="Affiche du film The Dark Knight (2008)">
+                                </div>
+                                <div class="card-body d-flex flex-column align-items-center gap-1">
+                                    <h3 class="card-title text-center">The Dark Knight (2008)</h3>
+                                    <p class="card-text small  mb-1 badge text-bg-secondary">
+                                        <span class="visually-hidden">Catégories : </span>Action, Crime, Drama
+                                    </p>
+                                    <div class="mb-1">
+                                        <span aria-hidden="true">★★★★☆</span>
+                                        <span class="visually-hidden">Note : 4,8 étoiles sur 5</span>
+                                    </div>
+                                    <p class="card-text small mb-3">
+                                        <span aria-hidden="true">2h32</span>
+                                        <span class="visually-hidden">Durée : 2 heures 32 minutes</span>
+                                    </p>
+                                    <a href="#" class="btn btn-stream mt-auto w-100"
+                                        aria-label="Regarder The Dark Knight (2008)">
+                                        Regarder
+                                    </a>
+                                </div>
                             </div>
-                            <p class="movie-duration">
-                                <span aria-hidden="true">2h32</span>
-                                <span class="visually-hidden">Durée : 2 heures 32 minutes</span>
-                            </p>
-                            <button class="btn-primary" aria-label="Regarder The Dark Knight (2008)">
-                                Regarder
-                            </button>
                         </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-image">
-                            <img src="images/films/inception.webp" alt="Affiche du film Interstellar (2014)">
-                        </div>
-                        <div class="movie-info">
-                            <h3>Interstellar (2014)</h3>
-                            <p class="movie-category">
-                                <span class="visually-hidden">Catégories : </span>Sci-Fi, Drama
-                            </p>
-                            <div class="movie-rating">
-                                <span aria-hidden="true">★★★★☆</span>
-                                <span class="visually-hidden">Note : 4,7 étoiles sur 5</span>
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card movie-card h-100 text-light">
+                                <div class="movie-image">
+                                    <img src="images/films/Interstellar_film_poster.jpg" class="card-img-top img-fluid"
+                                        alt="Affiche du film Interstellar (2014)">
+                                </div>
+                                <div class="card-body d-flex flex-column align-items-center gap-1">
+                                    <h3 class="card-title text-center">Interstellar (2014)</h3>
+                                    <p class="card-text small  mb-1 badge text-bg-secondary">
+                                        <span class="visually-hidden">Catégories : </span>Sci-Fi, Drama
+                                    </p>
+                                    <div class="mb-1">
+                                        <span aria-hidden="true">★★★★☆</span>
+                                        <span class="visually-hidden">Note : 4,7 étoiles sur 5</span>
+                                    </div>
+                                    <p class="card-text small mb-3">
+                                        <span aria-hidden="true">2h49</span>
+                                        <span class="visually-hidden">Durée : 2 heures 49 minutes</span>
+                                    </p>
+                                    <a href="#" class="btn btn-stream mt-auto w-100"
+                                        aria-label="Regarder Interstellar (2014)">
+                                        Regarder
+                                    </a>
+                                </div>
                             </div>
-                            <p class="movie-duration">
-                                <span aria-hidden="true">2h49</span>
-                                <span class="visually-hidden">Durée : 2 heures 49 minutes</span>
-                            </p>
-                            <button class="btn-primary" aria-label="Regarder Interstellar (2014)">
-                                Regarder
-                            </button>
                         </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-image">
-                            <img src="images/films/pulp_fiction.jpg" alt="Affiche du film Pulp Fiction (1994)">
-                        </div>
-                        <div class="movie-info">
-                            <h3>Pulp Fiction (1994)</h3>
-                            <p class="movie-category">
-                                <span class="visually-hidden">Catégories : </span>Crime, Drama
-                            </p>
-                            <div class="movie-rating">
-                                <span aria-hidden="true">★★★★☆</span>
-                                <span class="visually-hidden">Note : 4,6 étoiles sur 5</span>
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card movie-card h-100 text-light">
+                                <div class="movie-image">
+                                    <img src="images/films/pulp_fiction.jpg" class="card-img-top img-fluid"
+                                        alt="Affiche du film Pulp Fiction (1994)">
+                                </div>
+                                <div class="card-body d-flex flex-column align-items-center gap-1">
+                                    <h3 class="card-title text-center">Pulp Fiction (1994)</h3>
+                                    <p class="card-text small  mb-1 badge text-bg-secondary">
+                                        <span class="visually-hidden">Catégories : </span>Crime, Drama
+                                    </p>
+                                    <div class="mb-1">
+                                        <span aria-hidden="true">★★★★☆</span>
+                                        <span class="visually-hidden">Note : 4,6 étoiles sur 5</span>
+                                    </div>
+                                    <p class="card-text small mb-3">
+                                        <span aria-hidden="true">2h34</span>
+                                        <span class="visually-hidden">Durée : 2 heures 34 minutes</span>
+                                    </p>
+                                    <a href="#" class="btn btn-stream mt-auto w-100"
+                                        aria-label="Regarder Pulp Fiction (1994)">
+                                        Regarder
+                                    </a>
+                                </div>
                             </div>
-                            <p class="movie-duration">
-                                <span aria-hidden="true">2h34</span>
-                                <span class="visually-hidden">Durée : 2 heures 34 minutes</span>
-                            </p>
-                            <button class="btn-primary" aria-label="Regarder Pulp Fiction (1994)">
-                                Regarder
-                            </button>
                         </div>
-                    </article>
+                        <!-- Répétez les col- pour Inception, Pulp Fiction… -->
+                    </div>
                 </div>
             </section>
 
-            <section class="recommended" aria-labelledby="recommended-title">
-                <h2 id="recommended-title">Recommandés pour vous</h2>
-                <div class="recommended-grid">
-                    <article class="movie-card">
-                        <div class="movie-image">
-                            <img src="images/films/inception.webp" alt="Affiche du film Inception (2010)">
-                        </div>
-                        <div class="movie-info">
-                            <h3>Inception (2010)</h3>
-                            <p class="movie-category">
-                                <span class="visually-hidden">Catégories : </span>Sci-Fi, Thriller
-                            </p>
-                            <div class="movie-rating">
-                                <span aria-hidden="true">★★★★☆</span>
-                                <span class="visually-hidden">Note : 4,5 étoiles sur 5</span>
+            <section class="recommended py-5" aria-labelledby="recommended-title">
+                <div class="container">
+                    <h2 id="recommended-title" class="mb-4">Recommandés pour vous</h2>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card movie-card h-100 text-light">
+                                <div class="movie-image">
+                                    <img src="images/films/inception.webp" class="card-img-top img-fluid"
+                                        alt="Affiche du film Inception (2010)">
+                                </div>
+                                <div class="card-body d-flex flex-column align-items-center gap-1">
+                                    <h3 class="card-title text-center">Inception (2010)</h3>
+                                    <p class="card-text small  mb-1 badge text-bg-secondary">
+                                        <span class="visually-hidden">Catégories : </span>Sci-Fi, Thriller
+                                    </p>
+                                    <div class="mb-1">
+                                        <span aria-hidden="true">★★★★☆</span>
+                                        <span class="visually-hidden">Note : 4,5 étoiles sur 5</span>
+                                    </div>
+                                    <p class="card-text small mb-3">
+                                        <span aria-hidden="true">2h28</span>
+                                        <span class="visually-hidden">Durée : 2 heures 28 minutes</span>
+                                    </p>
+                                    <a href="#" class="btn btn-stream mt-auto w-100" aria-label="Regarder Inception (2010)">
+                                        Regarder
+                                    </a>
+                                </div>
                             </div>
-                            <p class="movie-duration">
-                                <span aria-hidden="true">2h28</span>
-                                <span class="visually-hidden">Durée : 2 heures 28 minutes</span>
-                            </p>
-                            <button class="btn-primary" aria-label="Regarder Inception (2010)">
-                                Regarder
-                            </button>
                         </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-image">
-                            <img src="images/films/matrix.jpeg" alt="Affiche du film The Matrix (1999)">
-                        </div>
-                        <div class="movie-info">
-                            <h3>The Matrix (1999)</h3>
-                            <p class="movie-category">
-                                <span class="visually-hidden">Catégories : </span>Action, Sci-Fi
-                            </p>
-                            <div class="movie-rating">
-                                <span aria-hidden="true">★★★★☆</span>
-                                <span class="visually-hidden">Note : 4,5 étoiles sur 5</span>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card movie-card h-100 text-light">
+                                <div class="movie-image">
+                                    <img src="images/films/matrix.jpeg" class="card-img-top img-fluid"
+                                        alt="Affiche du film The Matrix (1999)">
+                                </div>
+                                <div class="card-body d-flex flex-column align-items-center gap-1">
+                                    <h3 class="card-title text-center">The Matrix (1999)</h3>
+                                    <p class="card-text small  mb-1 badge text-bg-secondary">
+                                        <span class="visually-hidden">Catégories : </span>Action, Sci-Fi
+                                    </p>
+                                    <div class="mb-1">
+                                        <span aria-hidden="true">★★★★☆</span>
+                                        <span class="visually-hidden">Note : 4,5 étoiles sur 5</span>
+                                    </div>
+                                    <p class="card-text small mb-3">
+                                        <span aria-hidden="true">2h16</span>
+                                        <span class="visually-hidden">Durée : 2 heures 16 minutes</span>
+                                    </p>
+                                    <a href="#" class="btn btn-stream mt-auto w-100"
+                                        aria-label="Regarder The Matrix (1999)">
+                                        Regarder
+                                    </a>
+                                </div>
                             </div>
-                            <p class="movie-duration">
-                                <span aria-hidden="true">2h16</span>
-                                <span class="visually-hidden">Durée : 2 heures 16 minutes</span>
-                            </p>
-                            <button class="btn-primary" aria-label="Regarder The Matrix (1999)">
-                                Regarder
-                            </button>
                         </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-image">
-                            <img src="images/films/forrest_gump.jpg" alt="Affiche du film Forrest Gump (1994)">
-                        </div>
-                        <div class="movie-info">
-                            <h3>Forrest Gump (1994)</h3>
-                            <p class="movie-category">
-                                <span class="visually-hidden">Catégories : </span>Drama, Romance
-                            </p>
-                            <div class="movie-rating">
-                                <span aria-hidden="true">★★★★☆</span>
-                                <span class="visually-hidden">Note : 4,4 étoiles sur 5</span>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card movie-card h-100 text-light">
+                                <div class="movie-image">
+                                    <img src="images/films/forrest_gump.jpg" class="card-img-top img-fluid"
+                                        alt="Affiche du film Forrest Gump (1994)">
+                                </div>
+                                <div class="card-body d-flex flex-column align-items-center gap-1">
+                                    <h3 class="card-title text-center">Forrest Gump (1994)</h3>
+                                    <p class="card-text small  mb-1 badge text-bg-secondary">
+                                        <span class="visually-hidden">Catégories : </span>Drama, Romance
+                                    </p>
+                                    <div class="mb-1">
+                                        <span aria-hidden="true">★★★★☆</span>
+                                        <span class="visually-hidden">Note : 4,4 étoiles sur 5</span>
+                                    </div>
+                                    <p class="card-text small mb-3">
+                                        <span aria-hidden="true">2h22</span>
+                                        <span class="visually-hidden">Durée : 2 heures 22 minutes</span>
+                                    </p>
+                                    <a href="#" class="btn btn-stream mt-auto w-100"
+                                        aria-label="Regarder Forrest Gump (1994)">
+                                        Regarder
+                                    </a>
+                                </div>
                             </div>
-                            <p class="movie-duration">
-                                <span aria-hidden="true">2h22</span>
-                                <span class="visually-hidden">Durée : 2 heures 22 minutes</span>
-                            </p>
-                            <button class="btn-primary" aria-label="Regarder Forrest Gump (1994)">
-                                Regarder
-                            </button>
                         </div>
-                    </article>
+                    </div>
                 </div>
             </section>
 
-            <section class="new" aria-labelledby="new-title">
-                <h2 id="new-title">Nouveautés</h2>
-                <div class="new-grid">
-                    <article class="movie-card">
-                        <div class="movie-image">
-                            <img src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar (2014)">
-                        </div>
-                        <div class="movie-info">
-                            <h3>Interstellar (2014)</h3>
-                            <p class="movie-category">
-                                <span class="visually-hidden">Catégories : </span>Sci-Fi, Drama
-                            </p>
-                            <div class="movie-rating">
-                                <span aria-hidden="true">★★★★☆</span>
-                                <span class="visually-hidden">Note : 4,7 étoiles sur 5</span>
+            <section class="new py-5" aria-labelledby="new-title">
+                <div class="container">
+                    <h2 id="new-title" class="mb-4">Nouveautés</h2>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card movie-card h-100 text-light">
+                                <div class="movie-image">
+                                    <img src="images/films/Interstellar_film_poster.jpg" class="card-img-top img-fluid"
+                                        alt="Affiche du film Interstellar (2014)">
+                                </div>
+                                <div class="card-body d-flex flex-column align-items-center gap-1">
+                                    <h3 class="card-title text-center">Interstellar (2014)</h3>
+                                    <p class="card-text small  mb-1 badge text-bg-secondary">
+                                        <span class="visually-hidden">Catégories : </span>Sci-Fi, Drama
+                                    </p>
+                                    <div class="mb-1">
+                                        <span aria-hidden="true">★★★★☆</span>
+                                        <span class="visually-hidden">Note : 4,7 étoiles sur 5</span>
+                                    </div>
+                                    <p class="card-text small mb-3">
+                                        <span aria-hidden="true">2h49</span>
+                                        <span class="visually-hidden">Durée : 2 heures 49 minutes</span>
+                                    </p>
+                                    <a href="#" class="btn btn-stream mt-auto w-100"
+                                        aria-label="Regarder Interstellar (2014)">
+                                        Regarder
+                                    </a>
+                                </div>
                             </div>
-                            <p class="movie-duration">
-                                <span aria-hidden="true">2h49</span>
-                                <span class="visually-hidden">Durée : 2 heures 49 minutes</span>
-                            </p>
-                            <button class="btn-primary" aria-label="Regarder Interstellar (2014)">
-                                Regarder
-                            </button>
                         </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-image">
-                            <img src="images/films/darknight.webp" alt="Affiche du film The Dark Knight (2008)">
-                        </div>
-                        <div class="movie-info">
-                            <h3>The Dark Knight (2008)</h3>
-                            <p class="movie-category">
-                                <span class="visually-hidden">Catégories : </span>Action, Crime, Drama
-                            </p>
-                            <div class="movie-rating">
-                                <span aria-hidden="true">★★★★☆</span>
-                                <span class="visually-hidden">Note : 4,8 étoiles sur 5</span>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card movie-card h-100 text-light">
+                                <div class="movie-image">
+                                    <img src="images/films/darknight.webp" class="card-img-top img-fluid"
+                                        alt="Affiche du film The Dark Knight (2008)">
+                                </div>
+                                <div class="card-body d-flex flex-column align-items-center gap-1">
+                                    <h3 class="card-title text-center">The Dark Knight (2008)</h3>
+                                    <p class="card-text small  mb-1 badge text-bg-secondary">
+                                        <span class="visually-hidden">Catégories : </span>Action, Crime, Drama
+                                    </p>
+                                    <div class="mb-1">
+                                        <span aria-hidden="true">★★★★☆</span>
+                                        <span class="visually-hidden">Note : 4,8 étoiles sur 5</span>
+                                    </div>
+                                    <p class="card-text small mb-3">
+                                        <span aria-hidden="true">2h32</span>
+                                        <span class="visually-hidden">Durée : 2 heures 32 minutes</span>
+                                    </p>
+                                    <a href="#" class="btn btn-stream mt-auto w-100"
+                                        aria-label="Regarder The Dark Knight (2008)">
+                                        Regarder
+                                    </a>
+                                </div>
                             </div>
-                            <p class="movie-duration">
-                                <span aria-hidden="true">2h32</span>
-                                <span class="visually-hidden">Durée : 2 heures 32 minutes</span>
-                            </p>
-                            <button class="btn-primary" aria-label="Regarder The Dark Knight (2008)">
-                                Regarder
-                            </button>
                         </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-image">
-                            <img src="images/films/inception.webp" alt="Affiche du film Inception (2010)">
-                        </div>
-                        <div class="movie-info">
-                            <h3>Inception (2010)</h3>
-                            <p class="movie-category">
-                                <span class="visually-hidden">Catégories : </span>Sci-Fi, Thriller
-                            </p>
-                            <div class="movie-rating">
-                                <span aria-hidden="true">★★★★☆</span>
-                                <span class="visually-hidden">Note : 4,5 étoiles sur 5</span>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card movie-card h-100 text-light">
+                                <div class="movie-image">
+                                    <img src="images/films/inception.webp" class="card-img-top img-fluid"
+                                        alt="Affiche du film Inception (2010)">
+                                </div>
+                                <div class="card-body d-flex flex-column align-items-center gap-1">
+                                    <h3 class="card-title text-center">Inception (2010)</h3>
+                                    <p class="card-text small  mb-1 badge text-bg-secondary">
+                                        <span class="visually-hidden">Catégories : </span>Sci-Fi, Thriller
+                                    </p>
+                                    <div class="mb-1">
+                                        <span aria-hidden="true">★★★★☆</span>
+                                        <span class="visually-hidden">Note : 4,5 étoiles sur 5</span>
+                                    </div>
+                                    <p class="card-text small mb-3">
+                                        <span aria-hidden="true">2h28</span>
+                                        <span class="visually-hidden">Durée : 2 heures 28 minutes</span>
+                                    </p>
+                                    <a href="#" class="btn btn-stream mt-auto w-100" aria-label="Regarder Inception (2010)">
+                                        Regarder
+                                    </a>
+                                </div>
                             </div>
-                            <p class="movie-duration">
-                                <span aria-hidden="true">2h28</span>
-                                <span class="visually-hidden">Durée : 2 heures 28 minutes</span>
-                            </p>
-                            <button class="btn-primary" aria-label="Regarder Inception (2010)">
-                                Regarder
-                            </button>
                         </div>
-                    </article>
+                    </div>
                 </div>
             </section>
         </main>
 
-        <footer>
-            <div class="footer-content">
+        <footer class="footer bg-footer-background text-light p-5 mt-5">
+            <div class="container d-flex flex-column align-items-center gap-4">
                 <a href="index.html" class="footer-logo">
                     <img src="images/logo.jpeg" alt="Streamflix • Films en streaming">
                 </a>
-                <nav aria-label="Réseaux sociaux">
-                    <h2 class="visually-hidden">Suivez-nous</h2>
-                    <ul class="social-links">
-                        <li><a href=""><img src="images/reseaux-sociaux/facebook.svg" alt="Suivez-nous sur Facebook"></a></li>
-                        <li><a href=""><img src="images/reseaux-sociaux/instagram.svg" alt="Suivez-nous sur Instagram"></a></li>
-                        <li><a href=""><img src="images/reseaux-sociaux/tiktok.svg" alt="Suivez-nous sur TikTok"></a></li>
-                        <li><a href=""><img src="images/reseaux-sociaux/x.svg" alt="Suivez-nous sur X"></a></li>
-                    </ul>
-                </nav>
-                <div class="legal-links">
+
+                <ul class="social-links list-unstyled d-flex flex-wrap justify-content-center gap-3 mb-0">
+                    <li>
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Suivez-nous sur Facebook">
+                            <img src="images/reseaux-sociaux/facebook.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Suivez-nous sur Instagram">
+                            <img src="images/reseaux-sociaux/instagram.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Suivez-nous sur TikTok">
+                            <img src="images/reseaux-sociaux/tiktok.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Suivez-nous sur X">
+                            <img src="images/reseaux-sociaux/x.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="legal-links w-100 d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center gap-3">
                     <nav aria-label="Liens utiles">
-                        <h2 class="visually-hidden">Liens utiles</h2>
-                        <ul>
-                            <li><a href="">Aide</a></li>
-                            <li><a href="">Contact</a></li>
-                            <li><a href="">Mentions légales</a></li>
-                            <li><a href="">Conditions d'utilisation</a></li>
+                        <ul class="list-unstyled d-flex flex-column flex-lg-row align-items-center gap-2 mb-0">
+                            <li><a href="#">Aide</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Mentions légales</a></li>
+                            <li><a href="#">Conditions d'utilisation</a></li>
                         </ul>
                     </nav>
-                    <p class="copyright">
-                        &copy; 2025 Streamflix
-                    </p>
+                    <p class="mb-0">&copy; 2025 Streamflix</p>
                 </div>
             </div>
         </footer>
 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous">
+        </script>
+
         <script>
-            document.querySelector('.hamburger').addEventListener('click', function() {
-                const expanded = this.getAttribute('aria-expanded') === 'true';
-                this.setAttribute('aria-expanded', !expanded);
-                document.querySelector('#header-menu').setAttribute('aria-expanded', !expanded);
-            });
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         </script>
     </body>
 </html>

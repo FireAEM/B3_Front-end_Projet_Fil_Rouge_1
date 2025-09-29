@@ -1,0 +1,31 @@
+@import "../utils/variables";
+
+
+.btn-primary, .btn-secondary {
+    padding: $spacing-2 $spacing-3;
+    border: none;
+    border-radius: $spacing-5;
+    color: $text-light;
+    text-decoration: none;
+    background-color: $background-color2;
+    box-shadow: $box-shadow1;
+    transition: 0.25s;
+
+    &:hover {
+        filter: brightness(1.05);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.btn-primary:hover {
+    background-color: $accent-blue;
+    color: $text-light;
+}
+
+.btn-secondary:hover {
+    background-color: $accent-cyan;
+    color: $text-dark;
+}
