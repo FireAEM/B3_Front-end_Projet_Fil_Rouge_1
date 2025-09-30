@@ -36,3 +36,19 @@
         text-align: center;
     }
 }
+
+.watched {
+    opacity: 0.75;
+    position: relative;
+}
+
+.watched::after {
+    content: "✓ Vu";
+    position: absolute;
+    top: $spacing-2;
+    right: $spacing-2;
+    background: $accent-blue;
+    color: $text-light;
+    padding: $spacing-1 $spacing-2;
+    border-radius: $spacing-4;
+}
