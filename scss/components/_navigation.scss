@@ -9,6 +9,9 @@
     color: $text-light;
     padding: $spacing-1 $spacing-2;
     text-decoration: none;
+    font-weight: 300;
+    border: none;
+    border-radius: $spacing-4;
     z-index: 5000;
 }
 .skip-link:focus {
@@ -20,6 +23,8 @@
 .logo-stream {
     width: $spacing-5;
     transition: transform 0.25s;
+    background-color: $background-color2;
+    opacity: 0.75;
 
     &:active {
         transform: scale(0.95);
@@ -27,9 +32,6 @@
 }
 
 .navbar {
-    top: $spacing-1;
-    left: $spacing-1;
-    right: $spacing-1;
     background-color: $header-background;
     backdrop-filter: blur(20px) saturate(5);
     -webkit-backdrop-filter: blur(20px) saturate(5);
@@ -45,6 +47,7 @@
     &.active {
         color: $primary-red;
         font-weight: 600;
+        background-color: $background-color2;
     }
 }
 
