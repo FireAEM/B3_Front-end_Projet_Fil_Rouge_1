@@ -81,6 +81,11 @@ function Navbar({ onSearch }) {
                                     Ma liste
                                 </NavLink>
                             </li>
+                            <li className="nav-item">
+                                <NavLink to="/quiz" className="nav-link">
+                                    Quiz Cinéma
+                                </NavLink>
+                            </li>
                         </ul>
 
                         {/* Formulaire de recherche */}

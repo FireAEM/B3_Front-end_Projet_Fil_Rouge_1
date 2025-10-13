@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import Home from './pages/Home';
+import Quiz from './pages/Quiz';
 
 
 
@@ -21,6 +22,10 @@ function App() {
           <Route
             path="/"
             element={<Home search={search} onTotalFilms={setTotalFilms} />}
+          />
+          <Route
+            path="/quiz"
+            element={<Quiz />}
           />
           <Route
             path="*"
